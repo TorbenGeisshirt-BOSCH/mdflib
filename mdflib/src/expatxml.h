@@ -6,7 +6,7 @@
  * \brief Implement a wrapper around the EXPAT parser.
  */
 #pragma once
-#include <expat.h>
+#include "expat.h"
 
 #include <memory>
 

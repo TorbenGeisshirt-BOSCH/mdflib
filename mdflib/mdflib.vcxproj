@@ -154,14 +154,24 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include\mdf\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>
       </SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <Lib>
+      <AdditionalDependencies>zlibstatic.lib;libexpatwMT.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+    <Lib>
+      <AdditionalLibraryDirectories>..\lib\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+    <ProjectReference>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+    </ProjectReference>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -174,8 +184,9 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include\mdf\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -184,6 +195,15 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <Lib>
+      <AdditionalDependencies>zlibstatic.lib;libexpatwMT.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+    <Lib>
+      <AdditionalLibraryDirectories>..\lib\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+    <ProjectReference>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+    </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\at4block.cpp" />
@@ -346,6 +366,8 @@
     <ClInclude Include="..\include\mdf\ethconfigadapter.h" />
     <ClInclude Include="..\include\mdf\ethmessage.h" />
     <ClInclude Include="..\include\mdf\evcomment.h" />
+    <ClInclude Include="..\include\mdf\expat.h" />
+    <ClInclude Include="..\include\mdf\expat_external.h" />
     <ClInclude Include="..\include\mdf\fhcomment.h" />
     <ClInclude Include="..\include\mdf\flexrayconfigadapter.h" />
     <ClInclude Include="..\include\mdf\flexraymessage.h" />
@@ -405,6 +427,8 @@
     <ClInclude Include="..\include\mdf\mostmessage.h" />
     <ClInclude Include="..\include\mdf\samplerecord.h" />
     <ClInclude Include="..\include\mdf\sicomment.h" />
+    <ClInclude Include="..\include\mdf\zconf.h" />
+    <ClInclude Include="..\include\mdf\zlib.h" />
     <ClInclude Include="..\include\mdf\zlibutil.h" />
     <ClInclude Include="src\at4block.h" />
     <ClInclude Include="src\bigbuffer.h" />
